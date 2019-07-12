@@ -3,8 +3,8 @@
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Tiles.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/farm.png" type="Texture" id=3]
-[ext_resource path="res://entities/Chicken.tscn" type="PackedScene" id=4]
-[ext_resource path="res://entities/PlayerChicken.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/PlayerChicken.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/AIChicken.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -158,8 +158,8 @@ collision_mask = 2
 format = 1
 tile_data = PoolIntArray( 65555, 1, 0, 65556, 1, 1, 131091, 1, 65536, 131092, 1, 65537, 262152, 0, 0, 262153, 0, 1, 262154, 0, 1, 262155, 0, 1, 262156, 0, 1, 262157, 0, 1, 262158, 0, 2, 327688, 0, 65536, 327694, 0, 131072, 327695, 0, 2, 393224, 0, 65536, 393231, 0, 65538, 458760, 0, 65536, 458767, 0, 65538, 524296, 0, 65536, 524303, 0, 65538, 589832, 0, 65536, 589839, 0, 65538, 655368, 0, 65536, 655375, 0, 65538, 720904, 0, 131072, 720905, 0, 1, 720906, 0, 1, 720907, 0, 131073, 720908, 0, 131073, 720909, 0, 1, 720910, 0, 1, 720911, 0, 131074 )
 
-[node name="Chicken" parent="." instance=ExtResource( 4 )]
-position = Vector2( 208, 120.991 )
-
-[node name="PlayerChicken" parent="." instance=ExtResource( 5 )]
+[node name="PlayerChicken" parent="." instance=ExtResource( 4 )]
 position = Vector2( 160, 120 )
+
+[node name="AIChicken" parent="." instance=ExtResource( 5 )]
+position = Vector2( 208, 120 )
