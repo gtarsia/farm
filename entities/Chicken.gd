@@ -35,4 +35,5 @@ func _process(delta):
       $Sprite.flip_h = velocity.x < 0
   else:
     $Sprite/AnimationPlayer.stop()
+    $Sprite.frame = 2
   move_and_slide(velocity * speed)
