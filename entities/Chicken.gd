@@ -29,7 +29,7 @@ func _process(delta):
   if up:
     velocity.y -= 1
   if velocity.length() > 0:
-    velocity = velocity.normalized() * speed
+    velocity = velocity.normalized()
     $Sprite/AnimationPlayer.play("walk")
     if (velocity.x != 0):
       $Sprite.flip_h = velocity.x < 0
