@@ -2,11 +2,6 @@ extends KinematicBody2D
 
 class_name Chicken, "res://entities/Chicken.gd"
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Declare member variables here. Examples:
 export var speed = 20  # How fast the player will move (pixels/sec).
 var right = false
 var left = false
@@ -14,7 +9,6 @@ var up = false
 var down = false
 var screen_size  # Size of the game window.
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
   screen_size = get_viewport_rect().size
 
