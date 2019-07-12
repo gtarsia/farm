@@ -31,3 +31,9 @@ func _process(delta):
     $Sprite/AnimationPlayer.stop()
     $Sprite.frame = 2
   move_and_slide(velocity * speed)
+
+func reset_movement():
+  left = false
+  right = false
+  up = false
+  down = false
