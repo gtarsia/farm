@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Tiles.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/farm.png" type="Texture" id=3]
 [ext_resource path="res://entities/Chicken.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/PlayerChicken.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -159,3 +160,7 @@ tile_data = PoolIntArray( 65555, 1, 0, 65556, 1, 1, 131091, 1, 65536, 131092, 1,
 
 [node name="Chicken" parent="." instance=ExtResource( 4 )]
 position = Vector2( 208, 120.991 )
+
+[node name="PlayerChicken" parent="." instance=ExtResource( 5 )]
+position = Vector2( 160, 120 )
+speed = 10

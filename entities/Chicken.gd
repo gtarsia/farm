@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+class_name Chicken, "res://entities/Chicken.gd"
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,19 +19,6 @@ func _ready():
   screen_size = get_viewport_rect().size
 
 func _process(delta):
-  up = false
-  down = false
-  left = false
-  right = false
-  if Input.is_action_pressed("ui_right"):
-    right = true
-  elif Input.is_action_pressed("ui_left"):
-    left = true
-  if Input.is_action_pressed("ui_down"):
-    down = true
-  if Input.is_action_pressed("ui_up"):
-    up = true
-
   var velocity = Vector2()  # The player's movement vector.
   if right:
     velocity.x += 1
