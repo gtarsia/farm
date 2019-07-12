@@ -1,4 +1,8 @@
-extends Node2D
+extends KinematicBody2D
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 
 # Declare member variables here. Examples:
 export var speed = 20  # How fast the player will move (pixels/sec).
@@ -25,6 +29,4 @@ func _process(delta):
       $Sprite.flip_h = velocity.x < 0
   else:
     $Sprite/AnimationPlayer.stop()
-  position += velocity * delta
-  position.x = clamp(position.x, 0, screen_size.x)
-  position.y = clamp(position.y, 0, screen_size.y)
+  move_and_slide(velocity * speed)

@@ -20,12 +20,13 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 8, 8 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7, 8 )
 
-[node name="Chicken" type="Area2D"]
-collision_layer = 0
+[node name="Chicken" type="KinematicBody2D"]
+collision_layer = 2
 script = ExtResource( 1 )
+speed = 10
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -40,4 +41,5 @@ region_filter_clip = true
 anims/walk = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 3 )
+position = Vector2( -0.314018, 1.25608 )
+shape = SubResource( 2 )
