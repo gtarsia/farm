@@ -3,10 +3,6 @@ extends Chicken
 enum AIChickenState {IDLE, MOVING}
 var state = AIChickenState.IDLE
 
-func _process(delta):
-  print(state)
-  pass
-  
 func random_movement():
   # There are 8 directions
   # I pick a random one from those 8
