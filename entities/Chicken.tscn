@@ -38,6 +38,7 @@ region_rect = Rect2( 0, 160, 80, 32 )
 region_filter_clip = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+playback_speed = 4.0
 anims/walk = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
