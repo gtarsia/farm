@@ -1,7 +1,10 @@
 extends Chicken
 
-enum AIChickenState {IDLE, MOVING}
-var state = AIChickenState.IDLE
+enum AIChickenState {READY, IDLE_MOVING}
+var state = AIChickenState.READY
+
+func ready():
+  state = AIChickenState.READY
 
 func random_movement():
   # There are 8 directions
@@ -20,12 +23,12 @@ func random_movement():
 
 func _on_StartMoveTimer_timeout():
   random_movement()
-  state = AIChickenState.MOVING
+  state = AIChickenState.IDLE_MOVING
   $MovingTimer.start()
 
 func _on_MovingTimer_timeout():
   reset_movement()
-  state = AIChickenState.IDLE
+  ready()
   $StartMoveTimer.start()
   pass # Replace with function body.
 
