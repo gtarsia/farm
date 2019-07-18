@@ -41,13 +41,13 @@ position = Vector2( 320, 208 )
 position = Vector2( 368, 192 )
 
 [node name="AIChicken7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 408, 80 )
+position = Vector2( 408, 72 )
 
 [node name="AIChicken8" parent="." instance=ExtResource( 4 )]
 position = Vector2( 440, 200 )
 
 [node name="AIChicken9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 104, 144 )
+position = Vector2( 80, 144 )
 
 [node name="AIChicken10" parent="." instance=ExtResource( 4 )]
 position = Vector2( 176, 153.256 )
