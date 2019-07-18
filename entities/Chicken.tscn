@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://entities/Chicken.gd" type="Script" id=1]
-[ext_resource path="res://art/farm.png" type="Texture" id=2]
+[ext_resource path="res://art/farm.png" type="Texture" id=1]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Animation" id=2]
 resource_name = "walk"
 length = 0.8
 loop = true
@@ -17,30 +19,23 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 1, 2 ]
+"values": [ 1, 0 ]
 }
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7, 8 )
 
 [node name="Chicken" type="KinematicBody2D"]
 collision_layer = 2
-script = ExtResource( 1 )
-speed = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 vframes = 2
 hframes = 5
 frame = 1
 region_enabled = true
 region_rect = Rect2( 0, 160, 80, 32 )
-region_filter_clip = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 playback_speed = 4.0
-anims/walk = SubResource( 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.314018, 1.25608 )
-shape = SubResource( 2 )
+anims/walk = SubResource( 2 )
