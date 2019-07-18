@@ -3,7 +3,7 @@
 [ext_resource path="res://art/Floor.tres" type="TileSet" id=1]
 [ext_resource path="res://art/Walls.tres" type="TileSet" id=2]
 [ext_resource path="res://entities/PlayerChicken.tscn" type="PackedScene" id=3]
-[ext_resource path="res://entities/AIChicken.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/chickens/breeder/AIBreeder.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,53 +22,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 
 [node name="PlayerChicken" parent="." instance=ExtResource( 3 )]
 position = Vector2( 120, 96 )
 
-[node name="AIChicken" parent="." instance=ExtResource( 4 )]
-position = Vector2( 344, 112 )
-
-[node name="AIChicken2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 128, 224 )
-
-[node name="AIChicken3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 408, 136 )
-
-[node name="AIChicken4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 264, 209.256 )
-
-[node name="AIChicken5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 320, 208 )
-
-[node name="AIChicken6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 368, 192 )
-
-[node name="AIChicken7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 408, 72 )
-
-[node name="AIChicken8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 440, 200 )
-
-[node name="AIChicken9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 80, 144 )
-
-[node name="AIChicken10" parent="." instance=ExtResource( 4 )]
-position = Vector2( 176, 153.256 )
-
-[node name="AIChicken11" parent="." instance=ExtResource( 4 )]
-position = Vector2( 200, 176 )
-
-[node name="AIChicken12" parent="." instance=ExtResource( 4 )]
-position = Vector2( 264, 160 )
-
-[node name="AIChicken13" parent="." instance=ExtResource( 4 )]
-position = Vector2( 312, 64 )
-
-[node name="AIChicken14" parent="." instance=ExtResource( 4 )]
-position = Vector2( 184, 64 )
-
-[node name="AIChicken15" parent="." instance=ExtResource( 4 )]
-position = Vector2( 263.686, 136 )
-
-[node name="AIChicken16" parent="." instance=ExtResource( 4 )]
-position = Vector2( 328, 144 )
-
-[node name="AIChicken17" parent="." instance=ExtResource( 4 )]
-position = Vector2( 272, 97.2561 )
+[node name="AIBreeder" parent="." instance=ExtResource( 4 )]
+position = Vector2( 224, 112 )
+collision_layer = 2
+speed = 30
