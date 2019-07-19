@@ -45,3 +45,6 @@ func die():
   corpse.position = position
   get_parent().add_child(corpse)
   queue_free()
+  
+func set_message(msg):
+  $Message.text = msg

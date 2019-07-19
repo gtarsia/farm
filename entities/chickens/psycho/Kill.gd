@@ -11,6 +11,7 @@ func _process(delta):
     kill()
   
 func kill():
+  this.set_message('attack!')
   target.die()
   target = null
   $GoKillTimer.start()

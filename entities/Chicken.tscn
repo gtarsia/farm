@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/Chicken.gd" type="Script" id=1]
 [ext_resource path="res://art/farm.png" type="Texture" id=2]
 [ext_resource path="res://entities/Sprite.gd" type="Script" id=3]
+[ext_resource path="res://fonts/orange_kid.tres" type="DynamicFont" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -34,6 +35,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
 texture = ExtResource( 2 )
 vframes = 4
 region_enabled = true
@@ -44,3 +46,11 @@ chicken_sprite = 0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 playback_speed = 4.0
 anims/walk = SubResource( 2 )
+
+[node name="Message" type="Label" parent="."]
+margin_left = -16.0
+margin_top = -22.0
+margin_right = 16.0
+margin_bottom = -8.0
+custom_fonts/font = ExtResource( 4 )
+align = 1
