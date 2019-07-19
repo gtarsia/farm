@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-class_name Chicken, "res://entities/Chicken.gd"
+class_name Chicken
 
 export var speed = 20  # How fast the player will move (pixels/sec).
 var right = false
