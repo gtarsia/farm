@@ -6,7 +6,7 @@ func _process(delta):
   down = false
   left = false
   right = false
-  if Input.is_action_pressed("ui_right"):
+  if Input.is_action_pressed("ui_right"):  
     right = true
   elif Input.is_action_pressed("ui_left"):
     left = true
