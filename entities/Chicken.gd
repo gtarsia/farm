@@ -9,6 +9,8 @@ var up = false
 var down = false
 var screen_size  # Size of the game window.
 
+var corpse_scene = preload("res://entities/objects/ChickenCorpse.tscn")
+
 func _ready():
   screen_size = get_viewport_rect().size
 
@@ -37,3 +39,9 @@ func reset_movement():
   right = false
   up = false
   down = false
+
+func die():
+  var corpse = corpse_scene.instance()
+  corpse.position = position
+  get_parent().add_child(corpse)
+  queue_free()

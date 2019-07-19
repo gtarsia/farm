@@ -11,7 +11,7 @@ func _process(delta):
     kill()
   
 func kill():
-  target.queue_free()
+  target.die()
   target = null
   $GoKillTimer.start()
 
