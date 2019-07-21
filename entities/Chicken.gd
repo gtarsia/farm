@@ -4,12 +4,7 @@ class_name Chicken
 
 export var speed = 20  # How fast the player will move (pixels/sec).
 var velocity: Vector2 = Vector2()
-var screen_size  # Size of the game window.
-
 var corpse_scene = preload("res://entities/objects/ChickenCorpse.tscn")
-
-func _ready():
-  screen_size = get_viewport_rect().size
 
 # warning-ignore:unused_argument
 func _process(delta):
