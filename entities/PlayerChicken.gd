@@ -2,16 +2,14 @@ extends Chicken
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-  up = false
-  down = false
-  left = false
-  right = false
+  var velocity = Vector2()
   if Input.is_action_pressed("ui_right"):  
-    right = true
+    velocity.x = 1
   elif Input.is_action_pressed("ui_left"):
-    left = true
+    velocity.x = -1
   if Input.is_action_pressed("ui_down"):
-    down = true
-  if Input.is_action_pressed("ui_up"):
-    up = true
+    velocity.y = 1
+  elif Input.is_action_pressed("ui_up"):
+    velocity.y = -1
+  set_velocity(velocity)
   ._process(delta)
