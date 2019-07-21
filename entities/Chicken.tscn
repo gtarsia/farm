@@ -41,7 +41,6 @@ vframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 192, 16, 64 )
 script = ExtResource( 3 )
-chicken_sprite = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 playback_speed = 4.0

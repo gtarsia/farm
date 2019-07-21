@@ -7,9 +7,8 @@
 [node name="AIBreeder" index="0" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="1"]
-editor/display_folded = true
-region_rect = Rect2( 16, 192, 16, 64 )
-chicken_sprite = 1
+region_rect = Rect2( 32, 192, 16, 64 )
+chicken_sprite = 2
 
 [node name="AIChickenMovement" parent="." index="2" instance=ExtResource( 2 )]
 

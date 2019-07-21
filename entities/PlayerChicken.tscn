@@ -8,5 +8,5 @@ script = ExtResource( 2 )
 speed = 50
 
 [node name="Sprite" parent="." index="1"]
-region_rect = Rect2( 32, 192, 16, 64 )
-chicken_sprite = 2
+region_rect = Rect2( 16, 192, 16, 64 )
+chicken_sprite = 1
