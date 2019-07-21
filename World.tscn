@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://art/Floor.tres" type="TileSet" id=1]
 [ext_resource path="res://art/Walls.tres" type="TileSet" id=2]
 [ext_resource path="res://entities/PlayerChicken.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/chickens/breeder/AIBreeder.tscn" type="PackedScene" id=4]
-[ext_resource path="res://entities/chickens/psycho/AIPsychoChicken.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 
@@ -25,6 +24,3 @@ position = Vector2( 160, 160 )
 
 [node name="AIBreeder" parent="." instance=ExtResource( 4 )]
 position = Vector2( 328, 120 )
-
-[node name="PsychoChicken" parent="." instance=ExtResource( 5 )]
-position = Vector2( 200, 88 )
