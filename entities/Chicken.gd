@@ -8,6 +8,10 @@ var corpse_scene = preload("res://entities/objects/ChickenCorpse.tscn")
 
 # warning-ignore:unused_argument
 func _process(delta):
+  move_and_slide(velocity * speed)
+
+func set_velocity(_velocity: Vector2):
+  velocity = _velocity.normalized()
   if velocity.length() > 0:
     $Sprite/AnimationPlayer.play("walk")
     if (velocity.x != 0):
@@ -15,10 +19,6 @@ func _process(delta):
   else:
     $Sprite/AnimationPlayer.stop()
     $Sprite.frame = 0
-  move_and_slide(velocity * speed)
-
-func set_velocity(_velocity: Vector2):
-  velocity = _velocity.normalized()
 
 func die():
   var corpse = corpse_scene.instance()

@@ -5,7 +5,7 @@
 
 [node name="PlayerChicken" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-speed = 35
+speed = 50
 
 [node name="Sprite" parent="." index="1"]
 region_rect = Rect2( 32, 192, 16, 64 )
