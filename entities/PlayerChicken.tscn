@@ -4,7 +4,7 @@
 [ext_resource path="res://entities/PlayerChicken.gd" type="Script" id=2]
 
 [node name="PlayerChicken" index="0" instance=ExtResource( 1 )]
-mass = 10.0
+mass = 1.0
 script = ExtResource( 2 )
 speed = 50
 
