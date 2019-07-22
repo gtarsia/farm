@@ -4,9 +4,9 @@
 [ext_resource path="res://entities/AIChickenMovement.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/chickens/breeder/Breed.tscn" type="PackedScene" id=3]
 
-[node name="AIBreeder" index="0" instance=ExtResource( 1 )]
+[node name="AIBreeder" instance=ExtResource( 1 )]
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 region_rect = Rect2( 32, 192, 16, 64 )
 chicken_sprite = 2
 

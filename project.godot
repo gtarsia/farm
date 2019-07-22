@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
+"base": "RigidBody2D",
 "class": "Chicken",
 "language": "GDScript",
 "path": "res://entities/Chicken.gd"
@@ -54,6 +54,7 @@ ui_quit={
 [physics]
 
 2d/cell_size=32
+2d/default_gravity=0
 
 [rendering]
 

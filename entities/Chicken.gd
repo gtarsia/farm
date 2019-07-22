@@ -1,21 +1,22 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 class_name Chicken
 
 export var speed = 20  # How fast the player will move (pixels/sec).
-var velocity: Vector2 = Vector2()
 var corpse_scene = preload("res://entities/objects/ChickenCorpse.tscn")
 
-# warning-ignore:unused_argument
 func _process(delta):
-  move_and_slide(velocity * speed)
+  pass
+  
+func _physics_process(delta):
+  rotation = 0 
 
 func set_velocity(_velocity: Vector2):
-  velocity = _velocity.normalized()
-  if velocity.length() > 0:
+  linear_velocity = _velocity.normalized() * speed
+  if linear_velocity.length() > 0:
     $Sprite/AnimationPlayer.play("walk")
-    if (velocity.x != 0):
-      $Sprite.flip_h = velocity.x < 0
+    if (linear_velocity.x != 0):
+      $Sprite.flip_h = linear_velocity.x < 0
   else:
     $Sprite/AnimationPlayer.stop()
     $Sprite.frame = 0
