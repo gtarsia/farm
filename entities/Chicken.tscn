@@ -5,7 +5,7 @@
 [ext_resource path="res://entities/Sprite.gd" type="Script" id=3]
 [ext_resource path="res://fonts/orange_kid.tres" type="DynamicFont" id=4]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "walk"
 length = 0.8
 loop = true
@@ -40,7 +40,7 @@ script = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 playback_speed = 4.0
-anims/walk = SubResource( 2 )
+anims/walk = SubResource( 1 )
 
 [node name="Message" type="Label" parent="."]
 margin_left = -16.0
