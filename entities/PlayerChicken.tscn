@@ -11,6 +11,3 @@ speed = 50
 [node name="Sprite" parent="." index="0"]
 region_rect = Rect2( 16, 192, 16, 64 )
 chicken_sprite = 1
-
-[node name="CollisionPolygon2D" parent="." index="2"]
-polygon = PoolVector2Array( -3.66583, 9.49424, -14.4828, -0.0179639, -12.2367, -4.72451, -4.66487, -10.0569, 6.08117, -10.0569, 14.6292, -2.60846 )

@@ -51,5 +51,4 @@ custom_fonts/font = ExtResource( 4 )
 align = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2( -0.477219, -0.798027 )
-polygon = PoolVector2Array( -2.51883, 10.0323, -14.4828, -0.0179639, -4.66487, -10.0569, 6.08117, -10.0569, 14.6292, -2.60846 )
+polygon = PoolVector2Array( -2.5, 8, -7, 3, -7, 0, 0, -8, 6, 0, 6, 3, 2.5, 8 )
