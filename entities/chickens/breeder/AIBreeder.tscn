@@ -9,4 +9,4 @@
 region_rect = Rect2( 32, 192, 16, 64 )
 chicken_sprite = 2
 
-[node name="Breed" parent="." index="4" instance=ExtResource( 2 )]
+[node name="Breed" parent="." index="3" instance=ExtResource( 2 )]
