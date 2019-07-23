@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/AIChicken.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/chickens/bouncy/AIBouncy.gd" type="Script" id=2]
+
+[node name="AIBouncy" index="0" instance=ExtResource( 1 )]
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 2 )
+speed = 20
+
+[node name="Sprite" parent="." index="0"]
+editor/display_folded = true
+[connection signal="body_entered" from="." to="." method="_on_AIBouncy_body_entered"]
