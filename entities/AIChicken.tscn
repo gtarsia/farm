@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://entities/Chicken.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/AIChickenMovement.tscn" type="PackedScene" id=2]
 
-[node name="AIChicken" index="0" instance=ExtResource( 1 )]
-linear_damp = 15.0
+[node name="AIChicken" instance=ExtResource( 1 )]
+linear_damp = 10.0
+
+[node name="AIChickenMovement" parent="." index="3" instance=ExtResource( 2 )]

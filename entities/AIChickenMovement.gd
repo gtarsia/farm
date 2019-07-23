@@ -1,5 +1,8 @@
 extends Node
 
+export(int) var min_start = 0
+export(int) var max_start = 0
+
 enum AIChickenState {READY, IDLE_MOVING}
 var state = AIChickenState.READY
 var chicken: Chicken = null

@@ -4,6 +4,7 @@
 
 [node name="AIChickenMovement" type="Node"]
 script = ExtResource( 1 )
+min_start = 2
 
 [node name="StartMoveTimer" type="Timer" parent="."]
 wait_time = 0.5
