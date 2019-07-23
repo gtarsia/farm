@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func breed():
-  var scene = load("res://entities/AIChicken.tscn")
+  var scene = load("res://scenes/chickens/AIChicken.tscn")
   var child = scene.instance()
   child.position.x = chicken.position.x
   child.position.y = chicken.position.y

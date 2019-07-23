@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://entities/Chicken.tscn" type="PackedScene" id=1]
-[ext_resource path="res://entities/PlayerChicken.gd" type="Script" id=2]
+[ext_resource path="res://scenes/chickens/Chicken.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/chickens/PlayerChicken.gd" type="Script" id=2]
 
 [node name="PlayerChicken" instance=ExtResource( 1 )]
 mass = 1.0

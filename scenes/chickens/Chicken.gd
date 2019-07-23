@@ -3,7 +3,7 @@ extends RigidBody2D
 class_name Chicken
 
 export var speed = 20  # How fast the player will move (pixels/sec).
-var corpse_scene = preload("res://entities/objects/ChickenCorpse.tscn")
+var corpse_scene = preload("res://scenes/objects/ChickenCorpse.tscn")
 
 func _process(delta):
   pass
