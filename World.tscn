@@ -6,7 +6,7 @@
 [ext_resource path="res://entities/chickens/breeder/AIBreeder.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/chickens/bouncy/AIBouncy.tscn" type="PackedScene" id=5]
 
-[node name="Node2D" type="Node2D"]
+[node name="World" type="Node2D"]
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
