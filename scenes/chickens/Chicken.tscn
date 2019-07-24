@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/chickens/Chicken.gd" type="Script" id=1]
 [ext_resource path="res://art/farm.png" type="Texture" id=2]
@@ -23,6 +23,8 @@ tracks/0/keys = {
 "values": [ 1, 0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=2]
+
 [node name="Chicken" type="RigidBody2D" groups=[
 "chickens",
 ]]
@@ -39,6 +41,7 @@ vframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 192, 16, 64 )
 script = ExtResource( 3 )
+chicken_sprite = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 playback_speed = 4.0
@@ -59,3 +62,9 @@ polygon = PoolVector2Array( -2.5, 8, -7, 3, -7, 0, 0, -8, 6, 0, 6, 3, 2.5, 8 )
 modulate = Color( 1, 1, 1, 0.490196 )
 position = Vector2( -0.5, 8 )
 texture = ExtResource( 5 )
+
+[node name="Selector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Selector"]
+shape = SubResource( 2 )
+[connection signal="input_event" from="Selector" to="." method="_on_Selector_input_event"]

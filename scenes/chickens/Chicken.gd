@@ -29,3 +29,8 @@ func die():
 
 func set_message(msg):
   $Message.text = msg
+
+func _on_Selector_input_event(viewport, event, shape_idx):
+  if event is InputEventMouseButton:
+    print('clicked ' + self.name)
+  pass # Replace with function body.
