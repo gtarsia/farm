@@ -13,6 +13,9 @@ func _physics_process(delta):
 
 func set_velocity(_velocity: Vector2):
   linear_velocity = _velocity.normalized() * speed
+  set_animations()
+  
+func set_animations():
   if linear_velocity.length() > 0:
     $Sprite/AnimationPlayer.play("walk")
     if (linear_velocity.x != 0):
