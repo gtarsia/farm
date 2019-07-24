@@ -1,13 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/chickens/Chicken.gd" type="Script" id=1]
-[ext_resource path="res://art/farm.png" type="Texture" id=2]
-[ext_resource path="res://scenes/chickens/ChickenSprite.gd" type="Script" id=3]
-[ext_resource path="res://fonts/orange_kid.tres" type="DynamicFont" id=4]
-[ext_resource path="res://art/shadow.png" type="Texture" id=5]
+[ext_resource path="res://scenes/chickens/ChickenMaterial.tres" type="Material" id=2]
+[ext_resource path="res://art/farm.png" type="Texture" id=3]
+[ext_resource path="res://scenes/chickens/ChickenSprite.gd" type="Script" id=4]
+[ext_resource path="res://fonts/orange_kid.tres" type="DynamicFont" id=5]
+[ext_resource path="res://art/shadow.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
-resource_name = "walk"
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -30,18 +30,18 @@ tracks/0/keys = {
 ]]
 collision_layer = 2
 collision_mask = 3
-mass = 0.01
 script = ExtResource( 1 )
 speed = 100
 
 [node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
+material = ExtResource( 2 )
 z_index = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 0, 192, 16, 64 )
-script = ExtResource( 3 )
-chicken_sprite = 0
+region_rect = Rect2( 0, 193, 16, 64 )
+script = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 playback_speed = 4.0
@@ -52,7 +52,7 @@ margin_left = -16.0
 margin_top = -22.0
 margin_right = 16.0
 margin_bottom = -8.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 align = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -60,8 +60,8 @@ polygon = PoolVector2Array( -2.5, 8, -7, 3, -7, 0, 0, -8, 6, 0, 6, 3, 2.5, 8 )
 
 [node name="Shadow" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.490196 )
-position = Vector2( -0.5, 8 )
-texture = ExtResource( 5 )
+position = Vector2( -0.5, 7 )
+texture = ExtResource( 6 )
 
 [node name="Selector" type="Area2D" parent="."]
 

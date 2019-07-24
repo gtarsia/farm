@@ -4,8 +4,13 @@ class_name Chicken
 
 export var speed = 20  # How fast the player will move (pixels/sec).
 var corpse_scene = preload("res://scenes/objects/ChickenCorpse.tscn")
+var selector = null
+var original_damp = 0
+var selected: bool = false setget set_selected 
 
 func _process(delta):
+  selector = get_parent()
+  original_damp = self.linear_damp
   pass
   
 func _physics_process(delta):
@@ -14,6 +19,9 @@ func _physics_process(delta):
 func set_velocity(_velocity: Vector2):
   linear_velocity = _velocity.normalized() * speed
   set_animations()
+
+func stop():
+  set_velocity(Vector2())
   
 func set_animations():
   if linear_velocity.length() > 0:
@@ -30,10 +38,26 @@ func die():
   get_parent().add_child(corpse)
   queue_free()
 
+func _on_Selector_input_event(viewport, event, shape_idx):
+  if (event is InputEventMouseButton
+      and event.button_index == BUTTON_LEFT):
+    selector.select_chicken(self)
+  
+func damp_move(_velocity):
+  linear_damp = original_damp
+  set_velocity(_velocity)
+
+func dampless_move(_velocity):
+  linear_damp = -1
+  set_velocity(_velocity)
+  pass
+  
 func set_message(msg):
   $Message.text = msg
-
-func _on_Selector_input_event(viewport, event, shape_idx):
-  if event is InputEventMouseButton:
-    print('clicked ' + self.name)
-  pass # Replace with function body.
+  
+func set_selected(newVal):
+  selected = newVal
+  set_outline(newVal)
+  
+func set_outline(outlined: bool):
+  $Sprite.outlined = outlined

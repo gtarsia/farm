@@ -27,15 +27,20 @@ func random_movement():
     velocity.x = 1
   if (direction >= 6 && direction <= 8):
     velocity.y = 1
-  chicken.set_velocity(velocity)
+  chicken.damp_move(velocity)
 
 func _on_StartMoveTimer_timeout():
-  random_movement()
-  state = AIChickenState.IDLE_MOVING
-  $MovingTimer.start()
+  if (chicken.linear_velocity.length() > 1
+      or chicken.selected):
+    # Do nothing, just restart the timer.
+    $StartMoveTimer.start()
+  else:
+    random_movement()
+    state = AIChickenState.IDLE_MOVING
+    $MovingTimer.start()
 
 func _on_MovingTimer_timeout():
-  chicken.set_velocity(Vector2())
+  chicken.stop()
   ready()
   $StartMoveTimer.start()
   pass # Replace with function body.
