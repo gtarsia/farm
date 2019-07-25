@@ -5,12 +5,10 @@ class_name Chicken
 export var speed = 20  # How fast the player will move (pixels/sec).
 var corpse_scene = preload("res://scenes/objects/ChickenCorpse.tscn")
 var selector = null
-var original_damp = 0
 var selected: bool = false setget set_selected 
 
 func _process(delta):
   selector = get_parent()
-  original_damp = self.linear_damp
   pass
   
 func _physics_process(delta):
@@ -44,13 +42,10 @@ func _on_Selector_input_event(viewport, event, shape_idx):
     selector.select_chicken(self)
   
 func rigid_move(_velocity):
-  linear_damp = original_damp
   set_velocity(_velocity)
 
 func kinematic_move(_velocity):
-  linear_damp = -1
   set_velocity(_velocity)
-  pass
   
 func set_message(msg):
   $Message.text = msg
