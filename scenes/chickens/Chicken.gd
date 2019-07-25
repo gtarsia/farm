@@ -43,11 +43,11 @@ func _on_Selector_input_event(viewport, event, shape_idx):
       and event.button_index == BUTTON_LEFT):
     selector.select_chicken(self)
   
-func damp_move(_velocity):
+func rigid_move(_velocity):
   linear_damp = original_damp
   set_velocity(_velocity)
 
-func dampless_move(_velocity):
+func kinematic_move(_velocity):
   linear_damp = -1
   set_velocity(_velocity)
   pass

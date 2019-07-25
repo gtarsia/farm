@@ -25,7 +25,7 @@ func move_chicken(_target):
     return
   target = _target
   has_target = true
-  chicken.dampless_move(target - chicken.position)
+  chicken.kinematic_move(target - chicken.position)
   
 func select_chicken(_chicken: Chicken):
   if has_chicken:
