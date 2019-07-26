@@ -27,7 +27,7 @@ func random_movement():
     velocity.x = 1
   if (direction >= 6 && direction <= 8):
     velocity.y = 1
-  chicken.rigid_move(velocity)
+  chicken.move_rigid(velocity)
 
 func _on_StartMoveTimer_timeout():
   if (chicken.linear_velocity.length() > 1

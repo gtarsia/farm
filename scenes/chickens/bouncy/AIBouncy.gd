@@ -1,4 +1,4 @@
-extends Chicken
+extends ChickenRigid
 
 export var force = 300
 

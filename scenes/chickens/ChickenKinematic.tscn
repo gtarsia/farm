@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scenes/chickens/ChickenRigid.gd" type="Script" id=1]
+[ext_resource path="res://scenes/chickens/ChickenKinematic.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chickens/ChickenMaterial.tres" type="Material" id=2]
 [ext_resource path="res://art/farm.png" type="Texture" id=3]
 [ext_resource path="res://scenes/chickens/ChickenSprite.gd" type="Script" id=4]
@@ -25,7 +25,7 @@ tracks/0/keys = {
 
 [sub_resource type="RectangleShape2D" id=2]
 
-[node name="Chicken" type="RigidBody2D" groups=[
+[node name="Chicken" type="KinematicBody2D" groups=[
 "chickens",
 ]]
 script = ExtResource( 1 )

@@ -5,4 +5,3 @@
 
 [node name="Chicken" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-speed = 20

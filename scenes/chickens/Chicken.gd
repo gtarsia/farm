@@ -9,7 +9,6 @@ var selected: bool = false setget set_selected
 
 func _process(delta):
   selector = get_parent()
-  pass
   
 func _physics_process(delta):
   rotation = 0 
@@ -41,11 +40,12 @@ func _on_Selector_input_event(viewport, event, shape_idx):
       and event.button_index == BUTTON_LEFT):
     selector.select_chicken(self)
   
-func rigid_move(_velocity):
-  set_velocity(_velocity)
-
-func kinematic_move(_velocity):
-  set_velocity(_velocity)
+func move_rigid(_velocity):
+  var body = self
+  
+func set_kinematic_target(target):
+  var body = self
+  body.set_target(target)
   
 func set_message(msg):
   $Message.text = msg
