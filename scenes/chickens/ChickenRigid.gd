@@ -11,13 +11,12 @@ func _physics_process(delta):
 
 func set_linear_velocity(value: Vector2):
   body.linear_velocity = value
-  set_animations()
 
 func stop():
   set_linear_velocity(Vector2())
   
 func is_moving():
-  return body.linear_velocity.length() > 0
+  return body.linear_velocity.length() > 3
   
 func is_moving_left():
   return body.linear_velocity.x < 0

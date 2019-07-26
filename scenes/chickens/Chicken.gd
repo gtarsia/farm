@@ -4,7 +4,8 @@ class_name Chicken
 
 var corpse_scene = preload("res://scenes/objects/ChickenCorpse.tscn")
 var selector = null
-var selected: bool = false setget set_selected 
+var selected: bool = false setget set_selected
+var rigid = null 
 var kinematic = null
 
 enum Modes {RIGID, KINEMATIC}
@@ -13,6 +14,7 @@ var mode = Modes.RIGID
 func _ready():
   var scene = load("res://scenes/chickens/ChickenKinematic.tscn")
   kinematic = scene.instance()
+  rigid = self
   selector = get_parent()
 
 func _process(delta):
@@ -40,11 +42,14 @@ func _on_Selector_input_event(viewport, event, shape_idx):
     selector.select_chicken(self)
   
 func move_rigid(_velocity):
-  var body = self
+  if mode == Modes.KINEMATIC:
+    Switcher.switch(kinematic, rigid)
+    mode = Modes.RIGID
+  rigid.apply_central_impulse(_velocity * 100)
   
 func set_kinematic_target(target):
   if mode == Modes.RIGID:
-    Switcher.switch(self, kinematic)
+    Switcher.switch(rigid, kinematic)
     mode = Modes.KINEMATIC
   kinematic.set_target(target)
   
