@@ -9,9 +9,6 @@ var selected: bool = false setget set_selected
 
 func _process(delta):
   selector = get_parent()
-  
-func _physics_process(delta):
-  rotation = 0 
 
 func set_velocity(_velocity: Vector2):
   linear_velocity = _velocity.normalized() * speed
