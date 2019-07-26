@@ -29,7 +29,6 @@ tracks/0/keys = {
 "chickens",
 ]]
 script = ExtResource( 1 )
-speed = 100
 
 [node name="Sprite" type="Sprite" parent="."]
 editor/display_folded = true

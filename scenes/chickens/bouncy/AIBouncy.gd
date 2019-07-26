@@ -14,7 +14,7 @@ func _ready():
 #func _process(delta):
 #  pass
 
-func _on_AIBouncy_body_entered(body: RigidBody2D):
+func _on_AIBouncy_body_entered(body):
   if (not body is Chicken):
     return
   var direction = body.position - self.position

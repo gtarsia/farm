@@ -1,34 +1,36 @@
-extends RigidBody2D
+extends Node
 
 class_name Chicken
 
-export var speed = 20  # How fast the player will move (pixels/sec).
 var corpse_scene = preload("res://scenes/objects/ChickenCorpse.tscn")
 var selector = null
 var selected: bool = false setget set_selected 
+var kinematic = null
 
-func _process(delta):
+enum Modes {RIGID, KINEMATIC}
+var mode = Modes.RIGID
+
+func _ready():
+  var scene = load("res://scenes/chickens/ChickenKinematic.tscn")
+  kinematic = scene.instance()
   selector = get_parent()
 
-func set_velocity(_velocity: Vector2):
-  linear_velocity = _velocity.normalized() * speed
+func _process(delta):
   set_animations()
 
-func stop():
-  set_velocity(Vector2())
-  
 func set_animations():
-  if linear_velocity.length() > 0:
+  var body = self
+  if body.is_moving():
     $Sprite/AnimationPlayer.play("walk")
-    if (linear_velocity.x != 0):
-      $Sprite.flip_h = linear_velocity.x < 0
+    $Sprite.flip_h = body.is_moving_left()
   else:
     $Sprite/AnimationPlayer.stop()
     $Sprite.frame = 0
 
 func die():
+  var body = self
   var corpse = corpse_scene.instance()
-  corpse.position = position
+  corpse.position = body.position
   get_parent().add_child(corpse)
   queue_free()
 
@@ -41,8 +43,10 @@ func move_rigid(_velocity):
   var body = self
   
 func set_kinematic_target(target):
-  var body = self
-  body.set_target(target)
+  if mode == Modes.RIGID:
+    Switcher.switch(self, kinematic)
+    mode = Modes.KINEMATIC
+  kinematic.set_target(target)
   
 func set_message(msg):
   $Message.text = msg
