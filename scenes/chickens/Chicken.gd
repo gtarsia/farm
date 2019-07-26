@@ -12,10 +12,13 @@ enum Modes {RIGID, KINEMATIC}
 var mode = Modes.RIGID
 
 func _ready():
-  var scene = load("res://scenes/chickens/ChickenKinematic.tscn")
-  kinematic = scene.instance()
+  kinematic = get_kinematic_scene()
   rigid = self
   selector = get_parent()
+  
+func get_kinematic_scene():
+  var scene = load("res://scenes/chickens/ChickenKinematic.tscn")
+  return scene.instance()
 
 func _process(delta):
   set_animations()
@@ -52,6 +55,7 @@ func set_kinematic_target(target):
     Switcher.switch(rigid, kinematic)
     mode = Modes.KINEMATIC
   kinematic.set_target(target)
+  return kinematic
   
 func set_message(msg):
   $Message.text = msg

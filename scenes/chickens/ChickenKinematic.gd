@@ -1,4 +1,5 @@
 extends Chicken
+class_name ChickenKinematic
 
 var speed = 100
 var target: Vector2 = Vector2()
@@ -10,6 +11,8 @@ func _ready():
   # But I keep them in the editor so I get hints in the editor
   for child in get_children():
     remove_child(child)
+  mode = Modes.KINEMATIC
+  kinematic = self
 
 func _process(delta):
   var body = self
