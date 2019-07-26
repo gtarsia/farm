@@ -5,6 +5,12 @@ var target: Vector2 = Vector2()
 var velocity: Vector2 = Vector2()
 var has_target: bool = false
 
+func _ready():
+  # I do this so I replace this with the ones on ChickenRigid
+  # But I keep them in the editor so I get hints in the editor
+  for child in get_children():
+    remove_child(child)
+
 func _process(delta):
   var body = self
   if has_target:
@@ -27,4 +33,4 @@ func is_moving():
   
 func is_moving_left():
   var body = self
-  return has_target and target.x < body.position.x
+  return has_target and velocity.x < 0
