@@ -9,5 +9,4 @@ func _on_Explode_timeout():
   var explosion = explosion_scene.instance()
   explosion.position = position
   get_parent().add_child(explosion)
-  explosion.get_node('AnimationPlayer').play('explode')
   queue_free()

@@ -9,45 +9,60 @@
 
 [node name="AIBouncy" parent="ChickenSelector" index="0" instance=ExtResource( 2 )]
 position = Vector2( 132.5, 112 )
+collision_layer = 1
 
 [node name="AIChicken" parent="ChickenSelector" index="1" instance=ExtResource( 3 )]
 position = Vector2( 160, 80 )
+collision_layer = 1
 
 [node name="AIChicken2" parent="ChickenSelector" index="2" instance=ExtResource( 3 )]
 position = Vector2( 336, 104 )
+collision_layer = 1
 
 [node name="AIChicken3" parent="ChickenSelector" index="3" instance=ExtResource( 3 )]
 position = Vector2( 208, 144 )
+collision_layer = 1
 
 [node name="AIChicken4" parent="ChickenSelector" index="4" instance=ExtResource( 3 )]
 position = Vector2( 256, 48 )
+collision_layer = 1
 
 [node name="AIChicken5" parent="ChickenSelector" index="5" instance=ExtResource( 3 )]
 position = Vector2( 272, 109 )
+collision_layer = 1
 
 [node name="AIChicken6" parent="ChickenSelector" index="6" instance=ExtResource( 3 )]
 position = Vector2( 224, 96 )
+collision_layer = 1
 
 [node name="AIChicken7" parent="ChickenSelector" index="7" instance=ExtResource( 3 )]
 position = Vector2( 272, 160 )
+collision_layer = 1
 
 [node name="AIChicken8" parent="ChickenSelector" index="8" instance=ExtResource( 3 )]
 position = Vector2( 149.1, 192 )
+collision_layer = 1
 
 [node name="AIChicken9" parent="ChickenSelector" index="9" instance=ExtResource( 3 )]
 position = Vector2( 233.9, 197 )
+collision_layer = 1
 
 [node name="AIChicken10" parent="ChickenSelector" index="10" instance=ExtResource( 3 )]
 position = Vector2( 368, 67.2 )
+collision_layer = 1
 
 [node name="AIChicken11" parent="ChickenSelector" index="11" instance=ExtResource( 3 )]
 position = Vector2( 200, 64 )
+collision_layer = 1
 
 [node name="AIChicken12" parent="ChickenSelector" index="12" instance=ExtResource( 3 )]
 position = Vector2( 320, 169 )
+collision_layer = 1
 
 [node name="AIChicken13" parent="ChickenSelector" index="13" instance=ExtResource( 3 )]
 position = Vector2( 304, 209.8 )
+collision_layer = 1
 
 [node name="BomberRigid" parent="ChickenSelector" index="14" instance=ExtResource( 4 )]
 position = Vector2( 64, 224 )
+collision_layer = 1
