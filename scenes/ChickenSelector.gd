@@ -26,3 +26,6 @@ func select_chicken(_chicken: Chicken):
   chicken = _chicken
   has_chicken = true
   chicken.selected = true
+
+func shake(duration, frequency, amplitude):
+  get_parent().get_node('Camera2D').shake(duration, frequency, amplitude)
